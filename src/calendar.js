@@ -10,8 +10,7 @@ class Calendar {
   static WEEK_DAY_COUNT = 7
 
   // 年月をもとに初期化する。
-  // 月が指定されない場合は、実行時の月をデフォルトに指定する
-  constructor(year, month = new Date().getMonth() + 1) {
+  constructor(year, month) {
     // 年
     this.year = year
 
