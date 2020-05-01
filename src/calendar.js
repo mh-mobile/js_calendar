@@ -1,7 +1,7 @@
 // カレンダー表示クラス
 class Calendar {
   // 曜日ヘッダーの文字列
-  static WEEK_HEADER = '日 月 火 水 木 金 土'
+  static WEEK_HEADER = ['日', '月', '火', '水', '木', '金', '土'].join(' ')
 
   // 日付のパディング
   static DAY_LEFT_PADDING = 2
