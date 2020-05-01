@@ -11,10 +11,7 @@ class Calendar {
     const days = this.createDays()
     const dayContent = this.convertToContent(days)
 
-    return `     ${String(this.month).padStart(
-      Calendar.DAY_LEFT_PADDING,
-      ' '
-    )}月 ${this.year}      
+    return `${this.yearMonthHeader}
 ${Calendar.WEEK_HEADER}
 ${dayContent}`
   }
@@ -37,6 +34,13 @@ ${dayContent}`
         return week
       })
       .join('\n')
+  }
+
+  get yearMonthHeader() {
+    return `     ${String(this.month).padStart(
+      Calendar.DAY_LEFT_PADDING,
+      ' '
+    )}月 ${this.year}      `
   }
 }
 
