@@ -48,7 +48,7 @@ ${dayContent}`
   createDays() {
     // カレンダーの日付の二次元配列を準備する
     let days = [...Array(this.maxRowNum)].map((_) => {
-      return [...Array(7)].map(() => {
+      return [...Array(Calendar.WEEK_DAY_COUNT)].map(() => {
         return '  '
       })
     })
