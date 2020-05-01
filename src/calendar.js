@@ -2,7 +2,7 @@ class Calendar {
   static WEEK_HEADER = '日 月 火 水 木 金 土'
   static DAY_LEFT_PADDING = 2
 
-  constructor(year, month) {
+  constructor(year, month = new Date().getMonth() + 1) {
     this.year = year
     this.month = month
     this.firstMonthDate = new Date(this.year, this.month - 1, 1)
