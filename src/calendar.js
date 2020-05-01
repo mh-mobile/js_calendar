@@ -1,6 +1,13 @@
+// カレンダー表示クラス
 class Calendar {
+  // 曜日ヘッダーの文字列
   static WEEK_HEADER = '日 月 火 水 木 金 土'
+
+  // 日付のパディング
   static DAY_LEFT_PADDING = 2
+
+  // 週の曜日の数
+  static WEEK_DAY_COUNT = 7
 
   // 年月をもとに初期化する。
   // 月が指定されない場合は、実行時の月をデフォルトに指定する
