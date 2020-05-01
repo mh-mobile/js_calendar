@@ -1,7 +1,7 @@
 const Calendar = require('./calendar')
 
 test('show 2020/05 calendar', () => {
-  const cal = new Calendar()
+  const cal = new Calendar(2020, 5)
   const expectValue = `      5月 2020      
 日 月 火 水 木 金 土
                 1  2

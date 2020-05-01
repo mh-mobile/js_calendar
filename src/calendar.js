@@ -1,16 +1,20 @@
 class Calendar {
   static WEEK_HEADER = '日 月 火 水 木 金 土'
   static DAY_LEFT_PADDING = 2
+
+  constructor(year, month) {
+    this.year = year
+    this.month = month
+  }
+
   show() {
-    const year = 2020
-    const month = 5
     const days = this.createDays()
     const dayContent = this.convertToContent(days)
 
-    return `     ${String(month).padStart(
+    return `     ${String(this.month).padStart(
       Calendar.DAY_LEFT_PADDING,
       ' '
-    )}月 ${year}      
+    )}月 ${this.year}      
 ${Calendar.WEEK_HEADER}
 ${dayContent}`
   }
