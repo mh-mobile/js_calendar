@@ -24,15 +24,15 @@ class Calendar {
     this.maxRowNum = this.calculateRowPosition(this.lastMonthDate) + 1
   }
 
-  // カレンダーを標準出力に表示する
-  show() {
+  // 標準出力に表示する文字列を生成する
+  genOutput() {
     // 日付の配列を作成
     const days = this.createDays()
 
     // 日付の配列から文字列を作成
     const dayContent = this.convertToContent(days)
 
-    // 表示内容を標準出力に表示
+    // 表示内容を返す
     return `${this.yearMonthHeader}
 ${Calendar.WEEK_HEADER}
 ${dayContent}`

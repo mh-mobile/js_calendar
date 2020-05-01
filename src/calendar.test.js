@@ -10,7 +10,7 @@ test('show 2020/05 calendar', () => {
 17 18 19 20 21 22 23
 24 25 26 27 28 29 30
 31                  `
-  expect(cal.show()).toBe(expectValue)
+  expect(cal.genOutput()).toBe(expectValue)
 })
 
 test('show 2020/04 calendar', () => {
@@ -22,7 +22,7 @@ test('show 2020/04 calendar', () => {
 12 13 14 15 16 17 18
 19 20 21 22 23 24 25
 26 27 28 29 30      `
-  expect(cal.show()).toBe(expectValue)
+  expect(cal.genOutput()).toBe(expectValue)
 })
 
 test('show 2020/06 calendar', () => {
@@ -34,7 +34,7 @@ test('show 2020/06 calendar', () => {
 14 15 16 17 18 19 20
 21 22 23 24 25 26 27
 28 29 30            `
-  expect(cal.show()).toBe(expectValue)
+  expect(cal.genOutput()).toBe(expectValue)
 })
 
 test('show 1970/01 calendar', () => {
@@ -46,7 +46,7 @@ test('show 1970/01 calendar', () => {
 11 12 13 14 15 16 17
 18 19 20 21 22 23 24
 25 26 27 28 29 30 31`
-  expect(cal.show()).toBe(expectValue)
+  expect(cal.genOutput()).toBe(expectValue)
 })
 
 test('show 2020/11 calendar', () => {
@@ -58,5 +58,5 @@ test('show 2020/11 calendar', () => {
 12 13 14 15 16 17 18
 19 20 21 22 23 24 25
 26 27 28 29 30 31   `
-  expect(cal.show()).toBe(expectValue)
+  expect(cal.genOutput()).toBe(expectValue)
 })
