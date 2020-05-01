@@ -50,23 +50,25 @@ if (!validateArgs(argv)) {
 // カレンダーの年と月の数値パラメータを取得
 const createParams = (argv) => {
   const year = (() => {
+    const _year = argv.y
     // 引数なしの場合は、今年を返す
-    if (!argv.y) {
+    if (!_year) {
       return 1900 + new Date().getYear()
     }
 
     // 引数ありの場合は、引数を整数に変換した値を返す
-    return parseInt(argv.m)
+    return parseInt(_year)
   })()
 
   const month = (() => {
+    const _month = argv.m
     // 引数なしの場合は、今月を返す
-    if (!argv.m) {
+    if (!_month) {
       return new Date().getMonth() + 1
     }
 
     // 引数ありの場合は、引数を整数に変換した値を返す
-    return parseInt(argv.m)
+    return parseInt(_month)
   })()
 
   return {
