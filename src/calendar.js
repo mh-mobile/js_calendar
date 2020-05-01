@@ -82,7 +82,8 @@ ${dayContent}`
     return Math.floor((date.getDate() + (this.startOffsetDay - 1)) / 7)
   }
 
-  // カレンダーの年月用の文字列を返す
+  // カレンダーの年月用の文字列を返す。
+  // 例)       5月 2020
   get yearMonthHeader() {
     return `     ${String(this.month).padStart(
       Calendar.DAY_LEFT_PADDING,
