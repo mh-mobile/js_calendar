@@ -5,6 +5,10 @@ class Calendar {
   constructor(year, month) {
     this.year = year
     this.month = month
+    this.firstMonthDate = new Date(this.year, this.month - 1, 1)
+    this.lastMonthDate = new Date(this.year, this.month, 0)
+    this.startOffsetDay = this.firstMonthDate.getDay()
+    this.maxRowNum = this.calculateRowPosition(this.lastMonthDate) + 1
   }
 
   show() {
@@ -17,14 +21,23 @@ ${dayContent}`
   }
 
   createDays() {
-    return [
-      ['  ', '  ', '  ', '  ', '  ', ' 1', ' 2'],
-      [' 3', ' 4', ' 5', ' 6', ' 7', ' 8', ' 9'],
-      ['10', '11', '12', '13', '14', '15', '16'],
-      ['17', '18', '19', '20', '21', '22', '23'],
-      ['24', '25', '26', '27', '28', '29', '30'],
-      ['31', '  ', '  ', '  ', '  ', '  ', '  ']
-    ]
+    // カレンダーの日付の二次元配列を準備する
+    let days = [...Array(this.maxRowNum)].map((_) => {
+      return [...Array(7)].map(() => {
+        return '  '
+      })
+    })
+
+    // 二次元配列に日付を埋め込む
+    ;[...Array(this.lastMonthDate.getDate())].forEach((_, index) => {
+      const date = new Date(this.year, this.month - 1, index + 1)
+      const position = this.calculateColumnRowPosition(date)
+      days[position.row][position.column] = String(index + 1).padStart(
+        Calendar.DAY_LEFT_PADDING,
+        '  '
+      )
+    })
+    return days
   }
 
   convertToContent(days) {
@@ -34,6 +47,17 @@ ${dayContent}`
         return week
       })
       .join('\n')
+  }
+
+  calculateColumnRowPosition(date) {
+    return {
+      column: date.getDay(),
+      row: this.calculateRowPosition(date)
+    }
+  }
+
+  calculateRowPosition(date) {
+    return Math.floor((date.getDate() + (this.startOffsetDay - 1)) / 7)
   }
 
   get yearMonthHeader() {
