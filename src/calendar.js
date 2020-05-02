@@ -85,7 +85,9 @@ ${dayContent}`
 
   // 日付を埋め込む配列の行番号を計算する
   calculateRowPosition(date) {
-    return Math.floor((date.getDate() + (this.startOffsetDay - 1)) / 7)
+    return Math.floor(
+      (date.getDate() + (this.startOffsetDay - 1)) / Calendar.WEEK_DAY_COUNT
+    )
   }
 
   // カレンダーの年月用の文字列を返す。
