@@ -32,8 +32,6 @@ const validateArgs = (argv) => {
     errors.push('-mで月を指定してください')
   } else if (!year && monthArg) {
     validateMonthFormat(month)
-  } else {
-    return true
   }
 
   return errors.length === 0
@@ -81,7 +79,5 @@ const createParams = (argv) => {
 const calendarParam = createParams(argv)
 
 // カレンダーの表示処理
-const year = calendarParam.year
-const month = calendarParam.month
-const cal = new Calendar(year, month)
+const cal = new Calendar(calendarParam.year, calendarParam.month)
 console.log(cal.genOutput())
